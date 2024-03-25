@@ -1,5 +1,5 @@
 import { Movies } from "@/lib/types";
-import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 
 type Props = {
@@ -10,8 +10,9 @@ type Props = {
 
 const Row = ({ title, rowMovies, isLargeRow = false }: Props) => {
   const imageSizeClass = isLargeRow ? "max-h-56" : "max-h-28";
-  const imageWrapperClass = `mr-10 w-full transition-transform duration-500 ease-in-out hover:scale-105 opacity-100 ${imageSizeClass}`;
+  const imageWrapperClass = `mr-10 w-full transition-transform duration-500 ease-in-out hover:scale-105 opacity-100 cursor-pointer ${imageSizeClass}`;
 
+  const router = useRouter();
   return (
     <div className="ml-5 first:mt-5">
       <h2 className="text-lg font-bold">{title}</h2>
@@ -25,6 +26,7 @@ const Row = ({ title, rowMovies, isLargeRow = false }: Props) => {
             }`}
             alt={movie.name ?? "Movie"}
             className={imageWrapperClass}
+            onClick={() => router.push(`/${movie.id}`)}
           />
         ))}
       </div>
