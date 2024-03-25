@@ -1,7 +1,10 @@
 import { TVShow } from "@/lib/types";
-import React from "react";
+import React, { useState } from "react";
 import DetailsHeader from "./MovieDetailComponents/DetailsHeader";
 import DetailsOverview from "./MovieDetailComponents/DetailsOverview";
+import Trailers from "./MovieDetailComponents/Trailers";
+import RelatedMovies from "./MovieDetailComponents/RelatedMovies";
+import MoreDetails from "./MovieDetailComponents/MoreDetails";
 
 type Props = {
   tvDetails: TVShow;
@@ -9,7 +12,7 @@ type Props = {
 };
 
 const TvShowDetails = ({ tvDetails, similarTvShowData }: Props) => {
-  console.log(tvDetails, similarTvShowData);
+  const [tabValue, setTabValue] = useState(1);
   return (
     <div className="flex items-center justify-center text-white mx-16 mt-10">
       <img
@@ -25,12 +28,25 @@ const TvShowDetails = ({ tvDetails, similarTvShowData }: Props) => {
           runtime={tvDetails?.runtime}
           number_of_seasons={tvDetails?.number_of_seasons}
           vote_average={tvDetails?.vote_average}
+          homepage={tvDetails?.homepage}
+          tabValue={tabValue}
+          setTabValue={setTabValue}
         />
 
-        <DetailsOverview
-          overview={tvDetails?.overview}
-          similarMovies={similarTvShowData}
-        />
+        {tabValue === 1 && (
+          <DetailsOverview
+            overview={tvDetails?.overview}
+            similarMovies={similarTvShowData}
+          />
+        )}
+        {tabValue === 2 && <Trailers id={tvDetails?.id} type={"tv"} />}
+        {tabValue === 3 && (
+          <RelatedMovies
+            similarMovies={similarTvShowData}
+            tabValue={tabValue}
+          />
+        )}
+        {tabValue === 4 && <MoreDetails movieDetails={tvDetails} type={"tv"} />}
       </div>
     </div>
   );

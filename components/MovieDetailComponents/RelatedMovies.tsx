@@ -4,13 +4,16 @@ import React from "react";
 
 type Props = {
   similarMovies: MovieDetailsInterface[] | TVShow[];
+  tabValue: number | null;
 };
 
-const RelatedMovies = ({ similarMovies }: Props) => {
+const RelatedMovies = ({ similarMovies, tabValue }: Props) => {
   const router = useRouter();
   return (
     <div className="mt-10">
-      <h3 className="tracking-wide text-lg pb-2">Related Movies</h3>
+      {tabValue === null && (
+        <h3 className="tracking-wide text-lg pb-2">Related Movies</h3>
+      )}
 
       <div className="overflow-x-scroll scrollbar-hide flex space-x-4">
         {similarMovies.map((movie: any) => (
@@ -41,7 +44,11 @@ const RelatedMovies = ({ similarMovies }: Props) => {
                 movie.name ||
                 movie.original_name
               }
-              className="object-fill rounded-lg h-44 min-w-64"
+              className={
+                tabValue === null
+                  ? "object-fill rounded-lg h-44 min-w-64"
+                  : "object-fill rounded-lg h-72 min-w-96"
+              }
             />
           </div>
         ))}
