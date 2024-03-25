@@ -12,7 +12,6 @@ type Props = {
 };
 
 const MovieDetails = ({ movieDetails, similarMovies }: Props) => {
-  console.log(movieDetails, similarMovies);
   const [tabValue, setTabValue] = useState(1);
 
   return (

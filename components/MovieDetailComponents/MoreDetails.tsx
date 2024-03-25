@@ -23,7 +23,6 @@ const MoreDetails = ({ type, movieDetails }: Props) => {
     };
     fetchCredits();
   }, [movieDetails.id, type]);
-  console.log(cast);
   return (
     <div>
       <p className="leading-7 tracking-wide text-sm">{movieDetails.overview}</p>

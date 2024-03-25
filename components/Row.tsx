@@ -11,7 +11,7 @@ type Props = {
 const Row = ({ title, rowMovies, isLargeRow = false }: Props) => {
   const imageSizeClass = isLargeRow ? "max-h-56" : "max-h-28";
   const imageWrapperClass = `mr-10 w-full transition-transform duration-500 ease-in-out hover:scale-105 opacity-100 cursor-pointer ${imageSizeClass}`;
-  console.log("rowMovies", rowMovies);
+
   const router = useRouter();
   return (
     <div className="ml-5 first:mt-5">

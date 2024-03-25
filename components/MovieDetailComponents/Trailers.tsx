@@ -22,7 +22,6 @@ const Trailers = ({ id, type }: Props) => {
     fetchVideos();
   }, [id, type]);
 
-  console.log("videos", videos);
   return (
     <div className="flex overflow-x-scroll scrollbar-hide space-x-4 mt-8">
       {videos?.map(
