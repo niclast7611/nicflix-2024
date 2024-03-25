@@ -1,4 +1,4 @@
-import MovieDetails from "@/components/MovieDetails";
+import MovieDetails from "@/components/MovieDetailComponents/MovieDetails";
 import Nav from "@/components/Nav";
 import { MovieDetailsInterface } from "@/lib/types";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
@@ -10,7 +10,6 @@ type Props = {
 };
 
 const Details = ({ movieDetails, similarMovieData }: Props) => {
-  console.log("movieDetails", movieDetails);
   return (
     <div className="h-screen">
       <Nav />
