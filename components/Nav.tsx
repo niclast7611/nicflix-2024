@@ -6,7 +6,7 @@ type Props = {};
 const Nav = (props: Props) => {
   const router = useRouter();
   return (
-    <div className="sticky top-0 p-5">
+    <div className="sticky top-0 p-5 z-50 bg-black">
       <div className="flex justify-between">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"

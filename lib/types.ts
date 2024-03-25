@@ -1,4 +1,4 @@
-export interface NetflixOriginals {
+export interface Movies {
     adult?: boolean;
     backdrop_path?: string;
     genre_ids:number[];
