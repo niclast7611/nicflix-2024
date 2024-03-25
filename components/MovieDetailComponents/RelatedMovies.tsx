@@ -12,7 +12,7 @@ const RelatedMovies = ({ similarMovies, tabValue }: Props) => {
   return (
     <div className="mt-10">
       {tabValue === null && (
-        <h3 className="tracking-wide text-lg pb-2">Related Movies</h3>
+        <h3 className="tracking-wide text-lg py-4 text-left">Related Movies</h3>
       )}
 
       <div className="overflow-x-scroll scrollbar-hide flex space-x-4">

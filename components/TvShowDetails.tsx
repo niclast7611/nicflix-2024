@@ -14,13 +14,13 @@ type Props = {
 const TvShowDetails = ({ tvDetails, similarTvShowData }: Props) => {
   const [tabValue, setTabValue] = useState(1);
   return (
-    <div className="flex items-center justify-center text-white mx-16 mt-10">
+    <div className="flex flex-col md:flex-row items-center justify-center text-white mx-16 py-10">
       <img
         src={`https://image.tmdb.org/t/p/original/${tvDetails.poster_path}`}
         alt={tvDetails.name || tvDetails.original_name}
-        className="object-cover w-[29rem] h-[38rem] max-w-md"
+        className="object-cover w-80 h-[30rem] md:w-[29rem] md:h-[38rem] max-w-md"
       />
-      <div className="text-left w-1/2 ml-24 flex flex-col">
+      <div className="text-center md:text-left w-full md:w-1/2 md:ml-24 flex flex-col">
         <DetailsHeader
           title={tvDetails?.name}
           adult={tvDetails?.adult}

@@ -15,7 +15,7 @@ const MovieDetails = ({ movieDetails, similarMovies }: Props) => {
   const [tabValue, setTabValue] = useState(1);
 
   return (
-    <div className="flex items-center justify-center text-white mx-16 mt-10">
+    <div className="flex flex-col md:flex-row items-center justify-center text-white mx-16 py-10">
       <img
         src={
           movieDetails.poster_path
@@ -23,9 +23,9 @@ const MovieDetails = ({ movieDetails, similarMovies }: Props) => {
             : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdX32R9n8TFGp9dIKfy_C2lh_nJDUnRd02GZmh3Ndm0FB2FyeKicGsZbWoZuoPgiGrNAc&usqp=CAU"
         }
         alt={movieDetails.title || movieDetails.original_title}
-        className="object-cover w-[29rem] h-[38rem] max-w-md"
+        className="object-cover w-80 h-[30rem] md:w-[29rem] md:h-[38rem] max-w-md"
       />
-      <div className="text-left w-1/2 ml-24 flex flex-col">
+      <div className="text-center md:text-left w-full md:w-1/2 md:ml-24 flex flex-col">
         <DetailsHeader
           title={movieDetails?.title}
           adult={movieDetails?.adult}

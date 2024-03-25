@@ -57,15 +57,15 @@ const DetailsHeader = ({
   });
 
   return (
-    <div>
-      <div className="flex justify-between items-center">
+    <div className="mt-8 md:mt-0">
+      <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-col">
           <h1 className="font-bold text-4xl tracking-wider hover:underline">
             <a href={homepage} target="_blank">
               {title}
             </a>
           </h1>
-          <div className="text-gray-700 flex space-x-3 pt-2">
+          <div className="text-gray-700 flex space-x-3 mt-2 text-center mx-auto md:mx-0">
             <p>{release_date?.split("-")[0]}</p>
             <span>|</span>
             <p>{number_of_seasons ? number_of_seasons : formattedRuntime}</p>
@@ -73,7 +73,7 @@ const DetailsHeader = ({
             <p>{adult ? "18+" : "13+"}</p>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 mt-4 md:mt-0">
           <span className="text-2xl">{vote_average}</span>
           <FaStar className="h-6 w-6 text-yellow-500" />
         </div>
